@@ -23,29 +23,29 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple
-Plug 'Shadorain/shadotheme'
-Plug 'Shadorain/shadovim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'BurntSushi/ripgrep'
 Plug 'sharkdp/fd'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter' 
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'ThePrimeagen/harpoon'
-Plug 'TroyFletcher/vim-colors-synthwave'
-Plug 'goolord/alpha-nvim'
 Plug 'mhartington/formatter.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'psliwka/vim-smoothie'
 Plug 'preservim/nerdcommenter'
-Plug 'saucesaft/NeoAda_Colorscheme'
-Plug 'tiagovla/tokyodark.nvim'
-Plug 'numToStr/Sakura.nvim'
 Plug 'elvessousa/sobrio'
-Plug 'EdenEast/nightfox.nvim' 
 Plug 'rktjmp/lush.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'windwp/nvim-autopairs'
+Plug 'mattn/emmet-vim'
+Plug 'Mofiqul/dracula.nvim'
+Plug 'github/copilot.vim'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'windwp/nvim-ts-autotag'
 
 call plug#end()
 
@@ -59,7 +59,7 @@ nmap <F8> :TagbarToggle<CR>
 :set completeopt-=preview " For No Previews
 
 :set termguicolors
-:colorscheme catppuccin
+:colorscheme dracula
 :set background=dark
 
 let g:NERDTreeDirArrowExpandable="+"
@@ -94,3 +94,5 @@ filetype plugin on
 nnoremap <space> :NERDTreeToggle<CR>
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+
