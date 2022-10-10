@@ -54,7 +54,7 @@ Plug 'ChiliConSql/neovim-stylus'
 Plug 'puremourning/vimspector'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'artur-shaik/jc.nvim'
-Plug 'KarimElghamry/vim-auto-comment'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 call plug#end()
 
@@ -101,6 +101,7 @@ inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 autocmd BufRead,BufEnter *.astro set filetype=astro
+autocmd FileType apache setlocal commentstring=#\ %s
 
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -113,8 +114,20 @@ let g:astro_stylus = 'enable'
 ]])
 
 require'nvim-treesitter.configs'.setup {
-  autotag = {
-    enable = true,
+		context_commentstring = {
+				enable = true,
+				config = {
+					javascript = {
+						__default = '// %s',
+						jsx_element = '{/* %s */}',
+						jsx_fragment = '{/* %s */}',
+						jsx_attribute = '// %s',
+						comment = '// %s'
+					}
+				}
+		},
+		autotag = {
+				enable = true,
   }
 }
 
