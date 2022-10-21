@@ -12,12 +12,14 @@ vim.cmd([[
 
 call plug#begin()
 
+Plug 'junegunn/vim-plug'
 Plug 'Yggdroot/indentLine'
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
+Plug 'nvim-treesitter/nvim-treesitter' 
 Plug 'https://github.com/neoclide/coc.nvim', { 'branch': 'release'} " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
@@ -26,7 +28,6 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple
 Plug 'nvim-lua/plenary.nvim'
 Plug 'BurntSushi/ripgrep'
 Plug 'sharkdp/fd'
-Plug 'nvim-treesitter/nvim-treesitter' 
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'ThePrimeagen/harpoon'
 Plug 'mhartington/formatter.nvim'
@@ -55,8 +56,13 @@ Plug 'puremourning/vimspector'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'artur-shaik/jc.nvim'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'startup-nvim/startup.nvim'
+Plug 'tpope/vim-fugitive'
+Plug 'ggandor/leap.nvim'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
+
 
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
@@ -67,9 +73,6 @@ nmap <F8> :TagbarToggle<CR>
 :set termguicolors
 :colorscheme dracula
 :set background=dark
-
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
 
 let g:airline_powerline_fonts = 1
 
@@ -111,7 +114,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 let g:astro_typescript = 'enable'
 let g:astro_stylus = 'enable'
 
+
 ]])
+
 
 require'nvim-treesitter.configs'.setup {
 		context_commentstring = {
@@ -168,4 +173,8 @@ npairs.add_rules({
 
 npairs.setup({ map_cr = true })
 
- require('jc').setup{}
+require('jc').setup{}
+
+require('startup').setup({theme="dashboard"})
+
+require('leap').add_default_mappings()
