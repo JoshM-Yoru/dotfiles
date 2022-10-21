@@ -1,5 +1,6 @@
 # .bashrc
 
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -27,12 +28,22 @@ fi
 
 unset rc
 
-neofetch --kitty ~/Pictures/shinobuneo.png
+#neofetch alternator
+NUMBER=$(( $RANDOM%2 ))
+if [ $((NUMBER%2)) == 0 ]; then 
+		neofetch --kitty ~/Pictures/shinobuneo.png
+else
+		neofetch --kitty ~/Pictures/2bneo.jpg
+fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 . "$HOME/.cargo/env"
 
-PS1="$(tput setaf 14)[yoru$(tput setaf 199)@$(tput setaf 14)\h \W]$(tput setaf 199)$ ";
+PS1="$(tput setaf 14) yoru$(tput setaf 199)@$(tput setaf 14)\h $(tput setaf 199)\W $(tput setaf 199)>$(tput setaf 14)>$(tput setaf 199)> ";
 export PS1;
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
