@@ -39,7 +39,7 @@ fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 . "$HOME/.cargo/env"
 
-PS1="$(tput setaf 14) yoru$(tput setaf 199)@$(tput setaf 14)\h $(tput setaf 199)\W $(tput setaf 199)>$(tput setaf 14)>$(tput setaf 199)> ";
+PS1="$(tput setaf 14) yoru$(tput setaf 199)@$(tput setaf 14)\h $(tput setaf 199)\W $(tput setaf 14)>$(tput setaf 199)>$(tput setaf 14)>$(tput setaf 199) ";
 export PS1;
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -47,3 +47,6 @@ export PS1;
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+export EDITOR='nvim'
+export VISUAL='nvim'
