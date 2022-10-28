@@ -54,19 +54,47 @@ Plug 'tpope/vim-fugitive'
 Plug 'ggandor/leap.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'mfussenegger/nvim-dap'
+Plug 'HiPhish/gradle.nvim'
+Plug 'dcampos/nvim-snippy'
+Plug 'honza/vim-snippets'
+" Plug 'beeender/Comrade'
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 " LSP client and AutoInstaller
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'mfussenegger/nvim-jdtls'
-" Plug 'hrsh7th/nvim-cmp' 
-" Plug 'hrsh7th/cmp-nvim-lsp'
+
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
 
+""Coq Completion
+"" main one
+"Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+"" 9000+ Snippets
+"Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+"" lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+"" Need to **configure separately**
+
+"Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+" - shell repl
+" - nvim lua api
+" - scientific calculator
+" - comment banner
+" - etc
+
 call plug#end()
 
+" let g:coq_settings = { 'auto_start': v:true }
 
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -170,3 +198,7 @@ require('jc').setup{}
 require('startup').setup({theme="dashboard"})
 
 require('leap').add_default_mappings()
+
+require("jdtls.setup").add_commands()
+
+-- require("coq")
