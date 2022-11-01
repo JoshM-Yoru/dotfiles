@@ -45,8 +45,9 @@ export PS1;
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='lvim'
+export VISUAL='lvim'
+
+eval "$(starship init bash)"
+
