@@ -39,6 +39,8 @@ lvim.transparent_window = true
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+vim.opt.showtabline = 0
+lvim.builtin.bufferline.active = false
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -198,8 +200,17 @@ lvim.plugins = {
         "Mofiqul/dracula.nvim"
     },
     {
-        "ggandor/lightspeed.nvim",
+        'artanikin/vim-synthwave84'
+    },
+    {
+        'flazz/vim-colorschemes'
+    },
+    {
+        "ggandor/leap.nvim",
         event = "BufRead",
+        config = function()
+            require('leap').add_default_mappings()
+        end,
     },
     {
         "windwp/nvim-ts-autotag",
@@ -214,13 +225,11 @@ lvim.plugins = {
         "rktjmp/lush.nvim",
     },
     { "zbirenbaum/copilot.lua",
-        event = { "VimEnter" },
+        event = "InsertEnter",
         config = function()
-            vim.defer_fn(function()
-                require("copilot").setup {
-                    plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-                }
-            end, 100)
+            vim.schedule(function()
+                require("copilot").setup()
+            end)
         end,
     },
 
@@ -249,6 +258,21 @@ lvim.plugins = {
                 post_hook = nil, -- Function to run after the scrolling animation ends
             })
         end
+    },
+    {
+        "kevinhwang91/rnvimr",
+        cmd = "RnvimrToggle",
+        config = function()
+            vim.g.rnvimr_draw_border = 1
+            vim.g.rnvimr_pick_enable = 1
+            vim.g.rnvimr_bw_enable = 1
+        end,
+    },
+    { "tpope/vim-repeat" },
+    {
+        "turbio/bracey.vim",
+        cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+        run = "npm install --prefix server",
     },
     -- {
     --   'artur-shaik/jc.nvim',
