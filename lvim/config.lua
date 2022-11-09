@@ -274,6 +274,12 @@ lvim.plugins = {
         cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
         run = "npm install --prefix server",
     },
+    {
+        'tpope/vim-dadbod',
+    },
+    {
+        'kristijanhusak/vim-dadbod-ui',
+    },
     -- {
     --   'artur-shaik/jc.nvim',
     -- },
