@@ -10,6 +10,23 @@ vim.cmd([[
 :set nu rnu
 nmap <F8> :TagbarToggle<CR>
 
+nnoremap <C-u> <C-u> zz
+nnoremap <C-d> <C-d> zz
+nnoremap n nzz
+
+let g:astro_typescript = 'enable'
+let g:astro_stylus = 'enable'
+
+" :let $JAVA_TOOL_OPTIONS = '-javaagent:~/Programming/Java/Lombok/lombok.jar -Xbootclasspath/p:~/Programming/Java/Lombok/lombok.jar -jar:$(echo "$JAR")'
+
+":set command SpringProject !cp -r ~/Programming/Java/SpringBoot/spring .
+":set command JClass r ~/Programming/Java/Snippets/Class.txt
+":set command JEnum r ~/Programming/Java/Snippets/Enum.txt.txt
+":set command JAbstract r ~/Programming/Java/Snippets/Abstract.txt
+":set command JInterface r ~/Programming/Java/Snippets/Interface.txt
+
+" :command SpringProject !cp -R ~/Programming/Java/SpringBoot/spring/  .
+
 ]])
 
 local java = { "clang-format", "uncrustify" }
@@ -224,18 +241,19 @@ lvim.plugins = {
     {
         "rktjmp/lush.nvim",
     },
-    { "zbirenbaum/copilot.lua",
-        event = "InsertEnter",
-        config = function()
-            vim.schedule(function()
-                require("copilot").setup()
-            end)
-        end,
-    },
+    -- { "zbirenbaum/copilot.lua",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         vim.schedule(function()
+    --             require("copilot").setup()
+    --         end)
+    --     end,
+    -- },
 
-    { "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua", "nvim-cmp" },
-    }, {
+    -- { "zbirenbaum/copilot-cmp",
+    --     after = { "copilot.lua", "nvim-cmp" },
+    -- },
+    {
         "ray-x/lsp_signature.nvim",
         event = "BufRead",
         config = function() require "lsp_signature".on_attach() end,
@@ -280,6 +298,53 @@ lvim.plugins = {
     {
         'kristijanhusak/vim-dadbod-ui',
     },
+    {
+        'wuelnerdotexe/vim-astro',
+    },
+    {
+        config = function()
+            require 'lspconfig'.setup({
+                require 'jdtls'.setup {
+                    vmargs = {
+                        "-XX:+UseParallelGC",
+                        "-XX:GCTimeRatio=4",
+                        "-XX:AdaptiveSizePolicyWeight=90",
+                        "-Dsun.zip.disableMemoryMapping=true",
+                        "-Djava.import.generatesMetadataFilesAtProjectRoot=false",
+                        "-Xmx1G",
+                        "-Xms100m",
+                        -- "-javaagent:~/Programming/Java/Lombok/lombok.jar \",
+                        -- "-jar $(echo "$JAR") \",
+                    },
+                    use_lombok_agent = true
+                }
+            })
+        end
+    },
+    {
+        'prettier/vim-prettier'
+    }
+    -- {
+    --     'akinsho/git-conflict',
+    --     config = function() require('git-conflict').setup()
+    --     end,
+    --     {
+    --         default_mappings = true, -- disable buffer local mapping created by this plugin
+    --         default_commands = true, -- disable commands created by this plugin
+    --         disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
+    --         highlights = { -- They must have background color, otherwise the default color will be used
+    --             incoming = 'DiffText',
+    --             current = 'DiffAdd',
+    --         },
+    --     }
+    -- }
+    -- {
+    --     'tamton-aquib/duck.nvim',
+    --     config = function()
+    --         vim.keymap.set('n', '<leader>kk', function() require("duck").hatch() end, {})
+    --         vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+    --     end
+    -- }
     -- {
     --   'artur-shaik/jc.nvim',
     -- },
