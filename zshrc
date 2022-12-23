@@ -45,9 +45,30 @@ export PS1;
 export EDITOR='lvim'
 export VISUAL='lvim'
 
+export DENO_INSTALL="/home/Yoru/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+export DB_URL=jdbc:postgresql://localhost:5432
+export DB_USERNAME=postgres
+export DB_PASSWORD=password
+
+alias ec2="kitty +kitten ssh -i \"jm-ec2.pem\" ec2-user@ec2-34-229-147-87.compute-1.amazonaws.com"
+
+# export JVM_ARGS="-javaagent:~/Programming/Java/Lombok/lombok.jar"
+
 eval "$(thefuck --alias fuck)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
+if (( $+commands[luarocks] )); then
+    eval `luarocks path --bin`
+fi
+
 
 eval $(thefuck --alias)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nitrogen --restore
