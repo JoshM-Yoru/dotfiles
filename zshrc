@@ -40,7 +40,6 @@ export PS1;
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias ec2="kitty +kitten ssh -i \"jm-ec2.pem\" ec2-user@ec2-54-92-221-53.compute-1.amazonaws.com"
 
 # export JVM_ARGS="-javaagent:~/Programming/Java/Lombok/lombok.jar"
 
