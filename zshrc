@@ -52,7 +52,11 @@ export DB_URL=jdbc:postgresql://localhost:5432
 export DB_USERNAME=postgres
 export DB_PASSWORD=password
 
-alias ec2="kitty +kitten ssh -i \"jm-ec2.pem\" ec2-user@ec2-34-229-147-87.compute-1.amazonaws.com"
+export TWILIOSID=ACda7217e0f73a2f2e82353b2f41a30d24
+export TWILIONUMBER=+16086022881
+export TWILIOAUTHTOKEN=ea4081ea7082b2f6bfedf23578d08266
+
+alias ec2="kitty +kitten ssh -i \"jm-ec2.pem\" ec2-user@ec2-54-92-221-53.compute-1.amazonaws.com"
 
 # export JVM_ARGS="-javaagent:~/Programming/Java/Lombok/lombok.jar"
 
@@ -71,4 +75,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-nitrogen --restore
+# nitrogen --restore
