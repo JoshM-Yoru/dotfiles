@@ -30,6 +30,7 @@ let g:astro_stylus = 'enable'
 ]])
 
 local java = { "clang-format", "uncrustify" }
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
 --
 --[[
 lvim is the global options object
@@ -131,6 +132,11 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.ensure_installed = {
+    "java",
+}
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
 
 -- generic LSP settings
 
@@ -301,11 +307,14 @@ lvim.plugins = {
     {
         'wuelnerdotexe/vim-astro',
     },
+    -- {
+    --     'mfussenegger/nvim-jdtls',
+    -- },
     {
         config = function()
             require 'lspconfig'.setup({
                 require 'jdtls'.setup {
-                    vmargs = {
+                    cmd = {
                         "-XX:+UseParallelGC",
                         "-XX:GCTimeRatio=4",
                         "-XX:AdaptiveSizePolicyWeight=90",
@@ -313,8 +322,9 @@ lvim.plugins = {
                         "-Djava.import.generatesMetadataFilesAtProjectRoot=false",
                         "-Xmx1G",
                         "-Xms100m",
-                        -- "-javaagent:~/Programming/Java/Lombok/lombok.jar \",
-                        -- "-jar $(echo "$JAR") \",
+                        "-javaagent:~/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+                        "-jar $(echo $JAR) /"
+                        -- "-jar $(echo "$JAR") ",
                     },
                     use_lombok_agent = true
                 }
@@ -323,7 +333,49 @@ lvim.plugins = {
     },
     {
         'prettier/vim-prettier'
-    }
+    },
+    -- {
+    --     "aca/emmet-ls",
+    --     config = function()
+    --         local lspconfig = require("lspconfig")
+    --         local configs = require("lspconfig/configs")
+
+    --         local capabilities = vim.lsp.protocol.make_client_capabilities()
+    --         capabilities.textDocument.completion.completionItem.snippetSupport = true
+    --         capabilities.textDocument.completion.completionItem.resolveSupport = {
+    --             properties = {
+    --                 "documentation",
+    --                 "detail",
+    --                 "additionalTextEdits",
+    --             },
+    --         }
+
+    --         if not lspconfig.emmet_ls then
+    --             configs.emmet_ls = {
+    --                 default_config = {
+    --                     cmd = { "emmet-ls", "--stdio" },
+    --                     filetypes = {
+    --                         "html",
+    --                         "css",
+    --                         "javascript",
+    --                         "typescript",
+    --                         "eruby",
+    --                         "typescriptreact",
+    --                         "javascriptreact",
+    --                         "svelte",
+    --                         "vue",
+    --                         "astro",
+    --                     },
+    --                     root_dir = function(fname)
+    --                         return vim.loop.cwd()
+    --                     end,
+    --                     settings = {},
+    --                 },
+    --             }
+    --         end
+    --         lspconfig.emmet_ls.setup({ capabilities = capabilities })
+    --     end,
+    -- },
     -- {
     --     'akinsho/git-conflict',
     --     config = function() require('git-conflict').setup()
