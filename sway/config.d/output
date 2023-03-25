@@ -3,7 +3,10 @@
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
+  workspace 2 output DP-3
+  workspace 3 output DP-3
+  output DP-2 mode 3440x1440@100Hz
+  #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 #
 # Wacom Tablet - Example

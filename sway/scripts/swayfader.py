@@ -3,14 +3,14 @@ from threading import Thread
 from time import sleep
 
 
-FRAME_T = 0.01  # time taken between each frame of fade
+FRAME_T = 0.02  # time taken between each frame of fade
 
 # transparency values
 CON_AC     = 1     # active window
-CON_INAC   = 0.8   # inactive window
+CON_INAC   = 0.95   # inactive window
 FLOAT_AC   = 1     # active floating window
-FLOAT_INAC = 0.8  # inactive floating window
-BOT_INAC   = 0.9   # bottom window
+FLOAT_INAC = 0  # inactive floating window
+BOT_INAC   = 0.95   # bottom window
 
 
 # fade durations

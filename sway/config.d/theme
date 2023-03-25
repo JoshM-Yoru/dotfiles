@@ -6,7 +6,7 @@ gaps inner 5
 gaps outer 0
 
 # Hide titlebar on windows:
-default_border pixel 1
+default_border pixel 0
 
 # Default Font
 font pango: JetBrains Mono Nerd 12
@@ -16,7 +16,7 @@ smart_borders on
 smart_gaps on
 
 # Set wallpaper:
-exec swaybg -i ~/Pictures/mdj-nightfall.jpg
+exec swaybg -i ~/Pictures/mad-dog-jones-nightfall.jpg
 
 # Title format for windows
 for_window [shell="xdg_shell"] title_format "%title (%app_id)"

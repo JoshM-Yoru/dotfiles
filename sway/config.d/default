@@ -67,6 +67,9 @@ exec swayidle -w\
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Logout
+    bindsym $mod+Shift+q exec swaymsg exit
+
 #
 # Moving around:
 #
@@ -136,7 +139,7 @@ exec swayidle -w\
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+m floating toggle
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
@@ -214,7 +217,7 @@ bindsym $mod+r mode "resize"
 #
 # App shortcuts
 #
-    bindsym $mod+n exec thunar
+    bindsym $mod+n exec nautilus
     bindsym $mod+o exec firefox
 #
 # Screenshots

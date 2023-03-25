@@ -1,6 +1,7 @@
 # Auth with polkit-gnome:
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+
 # Desktop notifications
 exec mako
 
@@ -20,3 +21,6 @@ exec python3 ~/.config/sway/scripts/swayfader.py
 
 # Kitty
 exec kitty
+
+# Autotiling
+exec_always autotiling

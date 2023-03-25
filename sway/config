@@ -4,6 +4,8 @@
 # Config for sway
 #
 # Read `man 5 sway` for a complete reference.
+output DP-3 pos 0 0
+output DP-2 pos 1920 0
 
 # user config directory
 include $HOME/.config/sway/config.d/*

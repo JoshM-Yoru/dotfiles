@@ -5,10 +5,10 @@ for_window [app_id="firefox"] focus
 assign [class="firefox"] 2
 for_window [class="firefox"] focus
 
-assign [app_id=thunar] 3
-for_window [app_id=thunar] focus
+# assign [app_id="nautilus"] 3
+for_window [app_id="nautilus"] focus
 
-assign [class="discord"] 4
+assign [class="discord"] 3
 for_window [class="discord"] focus
 
 
