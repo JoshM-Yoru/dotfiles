@@ -13,9 +13,6 @@
 /*
 Arc-Dark Color Scheme
 */
-@define-color highlight #e30b9b ;
-@define-color base1  rgba(0,0,0,0.8) ;
-
 @keyframes blink-warning {
     70% {
         color: white;
@@ -49,16 +46,18 @@ Arc-Dark Color Scheme
     min-height: 0;
     margin: 1px;
     padding: 0;
+    color: #66ACED;
 }
 
 /* The whole bar */
 #waybar {
-    /* background: transparent; */
-    border: 2px solid transparent;
-    color: #bebebe;
-    background-color: @base1;
+    /* color: #dfdfdf; */
+    background-color: rgba(0,0,0,0.8);
+    /* background-color: rgba(8,0,37,0.85); */
+    /* background-color: rgba(0,0,0,0); */
     font-family: JetBrainsMono;
     font-size: 14px;
+    border: 5px solid rgba(0,0,0,0);
 }
 
 /* Every modules */
@@ -75,14 +74,28 @@ Arc-Dark Color Scheme
 #temperature,
 #tray,
 #idle_inhibitor,
+#window,
+#custom-power,
 #custom-PBPbattery {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+    padding:0.55rem 0.65rem;
+    margin: 1px 6px;
+    /* background-color: rgba(0,0,0,0.7); */
+    /* background-color: rgba(8,0,37,0.85); */
+    /* border-radius: 16px; */
 }
 
 /* -----------------------------------------------------------------------------
  * Modules styles
  * -------------------------------------------------------------------------- */
+
+#clock {
+    /* color: #ff4499; */
+    color: #73daca;
+}
+
+#custom-weather {
+    color: #ff4499;
+}
 
 #battery {
     animation-timing-function: linear;
@@ -108,6 +121,10 @@ Arc-Dark Color Scheme
     animation-duration: 2s;
 }
 
+#cpu {
+    color: #f7768e;
+}
+
 #cpu.warning {
     color: orange;
 }
@@ -120,6 +137,7 @@ Arc-Dark Color Scheme
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    color: #f7768e;
 }
 
 #memory.warning {
@@ -135,9 +153,10 @@ Arc-Dark Color Scheme
 }
 
 #mode {
-    background: @highlight;
+    /* background: @highlight; */
+    /* background: #dfdfdf; */
     border-bottom: 3px transparent;
-    color:white;
+    color:#ff4499;
     margin-left: 5px;
     padding: 7px;
 }
@@ -148,10 +167,11 @@ Arc-Dark Color Scheme
 
 #pulseaudio {
     padding-top:6px;
+    color: #73daca;
 }
 
 #pulseaudio.muted {
-    color: @highlight;
+    color: #ff4499;
 }
 
 #temperature.critical {
@@ -160,10 +180,13 @@ Arc-Dark Color Scheme
 
 #window {
     font-weight: bold;
+    color: #f7768e;
 }
 
 #workspaces {
-    font-size:13px;
+    font-size:18px;
+    /* background-color: rgba(8,0,37,0.85); */
+    /* border-radius: 16px; */
 }
 
 #workspaces button {
@@ -171,10 +194,13 @@ Arc-Dark Color Scheme
     margin-bottom: 0px;
     padding-left:3px;
     padding-right:3px;
+    /* color: @highlight; */
+    color: #dfdfdf;
 }
 
 #workspaces button.focused {
-    border-bottom: 3px solid  @highlight;
+    border-bottom: 3px solid  #ff4499;
+    /* color: #ff4499; */
     margin-bottom: 1px;
     padding-left:0;
 }
@@ -185,9 +211,10 @@ Arc-Dark Color Scheme
 }
 
 #custom-power {
-    margin-left:15px;
-    margin-right:15px;
-    font-size:15px;
+    /* font-size:15px; */
+    font-size:18px;
+    /* background-color: rgba(8,0,37,0.85); */
+    /* border-radius: 16px; */
 }
 
 #custom-launcher {

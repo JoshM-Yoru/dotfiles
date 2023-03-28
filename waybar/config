@@ -9,12 +9,12 @@
     "modules-left": [
         // "custom/launcher",
         "sway/workspaces",
-        "sway/mode",
+        "sway/window",
+        "sway/mode"
     ],
  
     "modules-center": [
         "clock",
-        "custom/weather",
     ],
 
     "modules-right": [
@@ -75,7 +75,7 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "xfce4-terminal -e 'htop'",
+        "on-click": "kitty -e 'htop'",
     },
 
     "custom/keyboard-layout": {
@@ -92,7 +92,7 @@
     "memory": {
         "interval": 5,
         "format": " {}%", // Icon: memory
-        "on-click": "xfce4-terminal -e 'htop'", 
+        "on-click": "kitty -e 'htop'", 
         "states": {
             "warning": 70,
             "critical": 90
@@ -133,8 +133,8 @@
         "format-icons": {
             "1": "",
             "2": "",
-            "3": "",
-            "4": "",
+            /* "3": "", */
+            "3": "",
         }
     },
 
@@ -194,13 +194,13 @@
 
     "custom/terminal": {
         "format": " ",
-        "on-click": "exec xfce4-terminal",
+        "on-click": "exec kitty",
         "tooltip": false
     },
 
     "custom/files": {
         "format": " ",
-        "on-click": "exec thunar",
+        "on-click": "exec nautilus",
         "tooltip": false
     },
 

@@ -2,18 +2,20 @@
 Arc-Dark Color Scheme
 */
 
-@define-color highlight #5294e2;
-@define-color base1  #404552;
-@define-color base2  #40455;
-@define-color base3  #4b5160;
+@define-color highlight #e30b9b;
+@define-color base1  #202330;
+@define-color base2  #20233;
+@define-color base3  #293040;
 
 *{
-    font-family: UbuntuMono;
+    font-family: JetBrainsMono;
+    height: fit-content;
 }
 
 #window {
     border: 1px solid @highlight;
     margin: 0px 5px 0px 5px;
+    background-color: #222;
 }
 
 #inner-box {
