@@ -311,6 +311,9 @@ lvim.plugins = {
     --     'mfussenegger/nvim-jdtls',
     -- },
     {
+        'hrsh7th/cmp-nvim-lsp-signature-help'
+    },
+    {
         config = function()
             require 'lspconfig'.setup({
                 require 'jdtls'.setup {
