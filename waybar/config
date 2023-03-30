@@ -2,6 +2,7 @@
 {
     "layer": "top",
     "position": "top",
+    "margin": 5,
 
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
@@ -133,8 +134,8 @@
         "format-icons": {
             "1": "",
             "2": "",
-            /* "3": "", */
             "3": "",
+            "4": "",
         }
     },
 

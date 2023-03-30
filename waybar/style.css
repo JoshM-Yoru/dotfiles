@@ -49,15 +49,16 @@ Arc-Dark Color Scheme
     color: #66ACED;
 }
 
+
 /* The whole bar */
-#waybar {
+window#waybar {
     /* color: #dfdfdf; */
-    background-color: rgba(0,0,0,0.8);
+    /* background-color: rgba(0,0,0,0.8); */
     /* background-color: rgba(8,0,37,0.85); */
-    /* background-color: rgba(0,0,0,0); */
+    background-color: rgba(0,0,0,0);
     font-family: JetBrainsMono;
     font-size: 14px;
-    border: 5px solid rgba(0,0,0,0);
+    /* border-radius: 22px; */
 }
 
 /* Every modules */
@@ -76,12 +77,12 @@ Arc-Dark Color Scheme
 #idle_inhibitor,
 #window,
 #custom-power,
+#workspaces,
 #custom-PBPbattery {
-    padding:0.55rem 0.65rem;
+    padding:0.25rem 0.75rem;
     margin: 1px 6px;
-    /* background-color: rgba(0,0,0,0.7); */
-    /* background-color: rgba(8,0,37,0.85); */
-    /* border-radius: 16px; */
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -166,7 +167,6 @@ Arc-Dark Color Scheme
 }
 
 #pulseaudio {
-    padding-top:6px;
     color: #73daca;
 }
 
@@ -184,17 +184,15 @@ Arc-Dark Color Scheme
 }
 
 #workspaces {
-    font-size:18px;
-    /* background-color: rgba(8,0,37,0.85); */
-    /* border-radius: 16px; */
+    font-size:16px;
+    /* padding-left: 12px; */
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
 }
 
 #workspaces button {
     border-bottom: 3px solid transparent;
     margin-bottom: 0px;
-    padding-left:3px;
-    padding-right:3px;
-    /* color: @highlight; */
     color: #dfdfdf;
 }
 
