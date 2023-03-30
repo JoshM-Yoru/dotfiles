@@ -2,45 +2,42 @@
 Arc-Dark Color Scheme
 */
 
-@define-color highlight #e30b9b;
-@define-color base1  #202330;
-@define-color base2  #20233;
-@define-color base3  #293040;
+@define-color highlight #f7768e;
+@define-color base1  rgba(0,0,0,0.6);
+@define-color base2 rgba(0,0,0,0.8);
+@define-color base3  rgba(0,0,0,0.1);
 
 *{
     font-family: JetBrainsMono;
-    height: fit-content;
+    /* height: fit-content; */
 }
 
 #window {
     border: 1px solid @highlight;
-    margin: 0px 5px 0px 5px;
-    background-color: #222;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0);
+    color: #bb9af7;
 }
 
 #inner-box {
-    background-color: @base2;
+    background-color: @base3;
 }
 
 #outer-box {
     margin: 5px;
     padding:10px;
     background-color: @base2;
-    margin-top: -22px;
+    margin-top: -18px;
 }
 
 #text {
     padding: 5px;
-    color: white;
+    /* color: white; */
 }
 
-#entry:nth-child(even) {
-    background-color: @base1;
-}
-
-#entry {
-    background-color: @base3;
-}
+/* #entry:nth-child(even) { */
+/*     background-color: @base1; */
+/* } */
 
 #entry:selected {
     background-color: @highlight;
