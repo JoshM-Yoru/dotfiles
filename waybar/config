@@ -9,9 +9,9 @@
 
     "modules-left": [
         // "custom/launcher",
-        "sway/workspaces",
-        "sway/window",
-        "sway/mode"
+        "wlr/workspaces",
+        "hyprland/window",
+        "hyprland/mode"
     ],
  
     "modules-center": [
@@ -20,7 +20,6 @@
 
     "modules-right": [
         "tray",
-        // "network",
         // "idle_inhibitor",
         "memory",
         "cpu",
@@ -30,7 +29,7 @@
         // "backlight#icon",
         // "backlight#value",
         "pulseaudio",
-        "custom/power",
+        "network",
     ],
 
     // Modules
@@ -65,7 +64,7 @@
     "clock": {
         "interval": 10,
         // "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
-        "format": "{:%e %b %Y %H:%M}",
+        "format": "{:%e %b %Y %H:%M} ",
         "tooltip-format": "{:%e %B %Y}"
     },
 
@@ -76,7 +75,7 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "kitty -e 'htop'",
+        "on-click": "kitty -e 'btm'",
     },
 
     "custom/keyboard-layout": {
@@ -93,7 +92,7 @@
     "memory": {
         "interval": 5,
         "format": " {}%", // Icon: memory
-        "on-click": "kitty -e 'htop'", 
+        "on-click": "kitty -e 'btm'", 
         "states": {
             "warning": 70,
             "critical": 90
@@ -102,30 +101,30 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-wifi": " ", // Icon: wifi
+        "format-ethernet": " ", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "xfce4-terminal -e 'nmtui'",
+        "on-click": "kitty -e 'nmtui'",
     },
     "network#vpn": {
         "interface": "tun0",
-        "format": "  {essid} ({signalStrength}%)",
+        "format": " ",
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     },
 
-    "sway/mode": {
+    "hyprland/mode": {
         "format": "{}",
         "tooltip": false
     },
 
-    "sway/window": {
+    "hyprland/window": {
         "format": "{}",
         "max-length": 120
     },
 
-    "sway/workspaces": {
+    "wlr/workspaces": {
         "disable-scroll": true,
         "disable-markup" : false,
         "all-outputs": true,

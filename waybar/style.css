@@ -56,7 +56,7 @@ window#waybar {
     /* background-color: rgba(0,0,0,0.8); */
     /* background-color: rgba(8,0,37,0.85); */
     background-color: rgba(0,0,0,0);
-    font-family: JetBrainsMono;
+    font-family: JetBrains Mono Nerd Font;
     font-size: 14px;
     /* border-radius: 22px; */
 }
@@ -185,7 +185,6 @@ window#waybar {
 
 #workspaces {
     font-size:16px;
-    /* padding-left: 12px; */
     background-color: rgba(0,0,0,0.8);
     border-radius: 20px;
 }
@@ -196,9 +195,8 @@ window#waybar {
     color: #dfdfdf;
 }
 
-#workspaces button.focused {
-    border-bottom: 3px solid  #ff4499;
-    /* color: #ff4499; */
+#workspaces button.active {
+    border-bottom: 1px solid  #ff4499;
     margin-bottom: 1px;
     padding-left:0;
 }
@@ -209,10 +207,8 @@ window#waybar {
 }
 
 #custom-power {
-    /* font-size:15px; */
     font-size:18px;
-    /* background-color: rgba(8,0,37,0.85); */
-    /* border-radius: 16px; */
+    padding-right: 1rem;
 }
 
 #custom-launcher {
