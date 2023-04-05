@@ -1,3 +1,4 @@
+# Dotfiles
 
 - **OS**                - Arch
 - **Window Manager/DE** - hyprland
