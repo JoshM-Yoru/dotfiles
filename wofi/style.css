@@ -4,19 +4,22 @@ Arc-Dark Color Scheme
 
 /* @define-color highlight #e30b9b; */
 @define-color highlight #f7768e;
-@define-color base1  rgba(0,0,0,0.6);
+@define-color base1  rgba(0,0,0,0.2);
 @define-color base2 rgba(0,0,0,0.8);
 @define-color base3  rgba(0,0,0,0.1);
 
 *{
-    font-family: JetBrainsMono;
+    font-family: JetBrains Mono Nerd Font;
 }
 
 window {
-    border: 1px solid @highlight;
-    border-radius: 4px;
-    background: rgba(0,0,0,0);
+    /* border: 1px solid @highlight; */
+    border-radius: 18px;
+    /* background: rgba(0,0,0,0); */
     color: #bb9af7;
+    position: relative;
+    background: linear-gradient(to bottom right, #73daca, #f7768e);
+    padding: 1px;
 }
 
 #input {
@@ -24,24 +27,26 @@ window {
     padding:3px;
     border-radius: 5px;
     border:none;
+    outline:none;
     /* color: white; */
     color: #bb9af7;
-    background: @base1;
+    /* background: @base1; */
+    background-color: #0a0a0a;
 }
 
 #inner-box {
-    background: @base3;
+    /* background: @base3; */
 }
 
 #outer-box {
-    margin: 5px;
+    margin: 3px;
     padding:15px;
-    background-color: @base2;
+    background-color: #0a0a0a;
+    border-radius: 18px;
 }
 
 #text {
     padding: 5px;
-    /* color: white; */
 }
 
 /* #entry:nth-child(even) { */
@@ -49,6 +54,8 @@ window {
 /* } */
 
 #entry:selected {
-    color: #e0af68;
+    color: black;
     background-color: @highlight;
+    border:none;
+    outline:none;
 }

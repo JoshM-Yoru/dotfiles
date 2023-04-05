@@ -78,6 +78,7 @@ window#waybar {
 #window,
 #custom-power,
 #workspaces,
+#custom-media,
 #custom-PBPbattery {
     padding:0.25rem 0.75rem;
     margin: 1px 6px;
@@ -167,12 +168,29 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #73daca;
+    color: #bb9af7;
+    border-left: 0px;
+    border-right: 0px;
+    margin-right: 0;
+    border-radius: 20px 0 0 20px;
 }
 
-#pulseaudio.muted {
-    color: #ff4499;
+/* #pulseaudio.muted { */
+/*     color: #ff4499; */
+/* } */
+/**/
+#pulseaudio.microphone {
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: 0;
+    padding-left: 0;
+    border-radius: 0 20px 20px 0;
 }
+
+/* #pulseaudio.microphone.muted { */
+/*     color: #ff4499; */
+/* } */
+
 
 #temperature.critical {
     color: red;
@@ -181,6 +199,10 @@ window#waybar {
 #window {
     font-weight: bold;
     color: #f7768e;
+}
+
+#custom-media {
+    color: #bb9af7;
 }
 
 #workspaces {

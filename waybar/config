@@ -10,8 +10,8 @@
     "modules-left": [
         // "custom/launcher",
         "wlr/workspaces",
+        "custom/media",
         "hyprland/window",
-        "hyprland/mode"
     ],
  
     "modules-center": [
@@ -29,6 +29,7 @@
         // "backlight#icon",
         // "backlight#value",
         "pulseaudio",
+    "pulseaudio#microphone",
         "network",
     ],
 
@@ -133,19 +134,17 @@
         "format-icons": {
             "1": "",
             "2": "",
-            "3": "",
+            "3": "󰙯",
             "4": "",
         }
     },
 
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "婢 {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-muted": "婢",
         "format-icons": {
             "headphone": "",
             "hands-free": "וֹ",
@@ -155,9 +154,21 @@
             "car": "",
             "default": [""]
         },
-        "on-click": "pavucontrol",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "pamixer --default-source -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
     },
 
     // to use the weather module replace <your_location> with your city or town
@@ -215,4 +226,16 @@
         "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
         "tooltip": false,
     },
+
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "󰗃"
+        },
+        "escape": true,
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
+    }
 }

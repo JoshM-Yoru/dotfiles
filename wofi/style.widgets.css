@@ -13,21 +13,22 @@ Arc-Dark Color Scheme
 }
 
 #window {
-    border: 1px solid @highlight;
-    border-radius: 4px;
+    border: 2px solid @highlight;
+    border-radius: 18px;
     background-color: rgba(0,0,0,0);
     color: #bb9af7;
+    padding: 5px;
 }
 
 #inner-box {
-    background-color: @base3;
+    background-color: @base1;
+    /* background-color: @base2; */
 }
 
 #outer-box {
     margin: 5px;
-    padding:10px;
-    background-color: @base2;
-    margin-top: -18px;
+    padding:5px 10px;
+    margin-top: -28px;
 }
 
 #text {
@@ -35,10 +36,11 @@ Arc-Dark Color Scheme
     /* color: white; */
 }
 
-/* #entry:nth-child(even) { */
-/*     background-color: @base1; */
-/* } */
+#entry:nth-child(even) {
+    /* background-color: pink; */
+}
 
 #entry:selected {
+color: black;
     background-color: @highlight;
 }
