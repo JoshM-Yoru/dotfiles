@@ -10,6 +10,7 @@
 - **Top Bar**           - waybar
 - **Launcher**          - wofi
 - **Theme**             - Tokyo Night
+- **Font**              - JetBrainsMono Nerd Font
 
 <img src="./hyprland_showcase.png" alt="img" width="900px">
 <img src="./hyprland_music.png" alt="img" width="900px">
