@@ -1,5 +1,6 @@
 # Slight modification to the Catpuccin Theme
 Mocha was modified for my current theme
+You will need to point to the mocha css file in the app's theme settings
 
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
