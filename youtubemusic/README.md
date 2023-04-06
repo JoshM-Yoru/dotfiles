@@ -1,5 +1,5 @@
 # Slight modification to the Catpuccin Theme
-Mocha was modified for my current theme
+Mocha was modified for my current theme.
 You will need to point to the mocha css file in the app's theme settings
 
 <h3 align="center">
