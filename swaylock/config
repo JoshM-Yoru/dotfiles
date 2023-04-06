@@ -3,7 +3,7 @@
 # daemonize
 indicator-caps-lock
 # datestr=%A
-image=$HOME/Pictures/lockscreen.png
+image=~/Pictures/anime-angel.png
 scaling=fill
 font=JetBrainsMono
 font-size=20
