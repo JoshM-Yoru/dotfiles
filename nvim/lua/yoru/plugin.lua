@@ -22,6 +22,8 @@ local plugins = {
         tag = '0.1.1',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
+    "nvim-telescope/telescope-fzf-native.nvim",
+    "kyazdani42/nvim-tree.lua",
     'folke/tokyonight.nvim',
     { 'nvim-treesitter/nvim-treesitter', cmd = "TSUpdate" },
     'nvim-treesitter/playground',
@@ -35,7 +37,7 @@ local plugins = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
             {
-                                -- Optional
+                -- Optional
                 'williamboman/mason.nvim',
                 build = function()
                     pcall(vim.cmd, 'MasonUpdate')
@@ -44,11 +46,16 @@ local plugins = {
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     },
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
+    "BurntSushi/ripgrep",
+    "rafamadriz/friendly-snippets",
+    "saadparwaiz1/cmp_luasnip",
     {
         "karb94/neoscroll.nvim",
         event = "WinScrolled",
@@ -119,7 +126,8 @@ local plugins = {
         end
     },
     'nvim-lualine/lualine.nvim',
-    'nvim-tree/nvim-web-devicons'
+    'nvim-tree/nvim-web-devicons',
+    'windwp/nvim-autopairs'
 }
 
 local opts = {}
@@ -130,7 +138,9 @@ require('lualine').get_config()
 
 require('lualine').setup({
     options = {
-        theme = 'ayu_mirage'
+        theme = 'ayu_mirage',
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' }
     }
 })
 
@@ -178,4 +188,3 @@ require('Comment').setup({
     ---Function to call after (un)comment
     post_hook = nil,
 })
-
