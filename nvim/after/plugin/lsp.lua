@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 lsp.preset('recommended')
 
@@ -16,6 +17,10 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<Return>'] = cmp.mapping.confirm(cmp_select),
 	['<C-Space>'] = cmp.mapping.complete(),
 })
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 
 lsp.set_preferences({
 	sign_icons = { }

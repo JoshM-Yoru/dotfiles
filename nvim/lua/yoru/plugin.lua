@@ -135,7 +135,6 @@ local opts = {}
 require("lazy").setup(plugins, opts)
 require("mason").setup()
 require('lualine').get_config()
-
 require('lualine').setup({
     options = {
         theme = 'ayu_mirage',
@@ -143,6 +142,8 @@ require('lualine').setup({
         component_separators = { left = '', right = '' }
     }
 })
+
+require("nvim-autopairs").setup();
 
 
 require('Comment').setup({

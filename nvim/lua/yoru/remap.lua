@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>L", vim.cmd.Lazy)
+vim.keymap.set("n", "<leader>M", vim.cmd.Mason)
+vim.keymap.set("n", "<leader>lre", vim.cmd.LspRestart)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -27,9 +30,11 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<leader>o", function()
-    vim.lsp.buf.format()
-end)
+-- vim.keymap.set("n", "<leader>o", function()
+--     vim.lsp.buf.format()
+-- end)
+
+vim.keymap.set("n", "<leader>o", vim.cmd.LspZeroFormat)
 
 vim.cmd([[
     let g:astro_typescript = 'enable'
