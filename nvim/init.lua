@@ -1,6 +1,7 @@
 require("yoru")
 
 vim.cmd[[
-colorscheme tokyonight-night
 autocmd VimResized * wincmd =
+colorscheme tokyonight-night
+hi NvimTreeNormal guibg=NONE
 ]]
