@@ -1,7 +1,7 @@
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
-    prin "$(color 14)yoru$(color 9)@$(color 14)yoru-arch"
+    prin "$(color 14)yoru$(color 9)@$(color 14)arch-linux"
     info underline
 
     info "$(color 14)OS" distro
@@ -12,8 +12,10 @@ print_info() {
     info "$(color 14)Shell" shell
     info "$(color 14)Resolution" resolution
     info "$(color 14)DE" de
+
     # info "WM" wm
     # info "WM Theme" wm_theme
+
     info "$(color 14)Theme" theme
     info "$(color 14)Icons" icons
     info "$(color 14)Terminal" term
@@ -732,7 +734,7 @@ image_backend="kitty"
 #       wallpaper will be used.
 # image_source="Pictures/shinobuneo.png"
 # image_source="Pictures/2bneo.jpg"
-image_source="Pictures/great-wave-transparent-2.png"
+image_source="$HOME/Pictures/great-wave-transparent-2.png"
 
 
 # Ascii Options

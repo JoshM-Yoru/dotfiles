@@ -25,6 +25,7 @@ local plugins = {
     "nvim-telescope/telescope-fzf-native.nvim",
     "kyazdani42/nvim-tree.lua",
     'folke/tokyonight.nvim',
+    { "catppuccin/nvim", name = "catppuccin" },
     { 'nvim-treesitter/nvim-treesitter', cmd = "TSUpdate" },
     'nvim-treesitter/playground',
     'theprimeagen/harpoon',
