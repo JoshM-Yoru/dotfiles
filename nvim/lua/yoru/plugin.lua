@@ -128,7 +128,12 @@ local plugins = {
     },
     'nvim-lualine/lualine.nvim',
     'nvim-tree/nvim-web-devicons',
-    'windwp/nvim-autopairs'
+    'windwp/nvim-autopairs',
+    'rush-rs/tree-sitter-asm',
+    {
+        'christoomey/vim-tmux-navigator',
+        lazy = false
+    },
 }
 
 local opts = {}
@@ -146,6 +151,13 @@ require('lualine').setup({
 
 require("nvim-autopairs").setup();
 
+require('nvim-treesitter.parsers').get_parser_configs().asm = {
+    install_info = {
+        url = 'https://github.com/rush-rs/tree-sitter-asm.git',
+        files = { 'src/parser.c' },
+        branch = 'main',
+    },
+}
 
 require('Comment').setup({
     ---Add a space b/w comment and the line

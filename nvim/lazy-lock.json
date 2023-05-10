@@ -34,8 +34,10 @@
   "telescope.nvim": { "branch": "master", "commit": "c1a2af0af69e80e14e6b226d3957a064cd080805" },
   "tokyonight.nvim": { "branch": "main", "commit": "1b0c88094548a62641ece1e668fa9a234e1c539e" },
   "transparent.nvim": { "branch": "main", "commit": "960a8c88d4e06bc6c980dddd9912589a36408833" },
+  "tree-sitter-asm": { "branch": "main", "commit": "36dc26acc7818920de2e103e20a9f42358caf926" },
   "undotree": { "branch": "master", "commit": "485f01efde4e22cb1ce547b9e8c9238f36566f21" },
   "vim-astro": { "branch": "main", "commit": "34732be5e9a5c28c2409f4490edf92d46d8b55a9" },
   "vim-fugitive": { "branch": "master", "commit": "ef99f1d90cdb33a52931aed5868785b51fb9411d" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "cdd66d6a37d991bba7997d593586fc51a5b37aa8" },
   "which-key.nvim": { "branch": "main", "commit": "4b73390eec680b4c061ea175eb32c0ff3412271d" }
 }
