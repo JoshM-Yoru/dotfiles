@@ -1,7 +1,11 @@
 
 # .bashrc
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source ~/.zprofile
+
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Source global definitions
 if [ -f /etc/zshrc ]; then
@@ -43,6 +47,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # export JVM_ARGS="-javaagent:~/Programming/Java/Lombok/lombok.jar"
 
 alias ls="exa"
+alias vim="nvim"
 eval "$(thefuck --alias fuck)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
@@ -63,12 +68,13 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # bun completions
-[ -s "/home/Yoru/.bun/_bun" ] && source "/home/Yoru/.bun/_bun"
+[ -s "/home/yoru/.bun/_bun" ] && source "/home/yoru/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export JDTLS_JVM_ARGS="-javaagent:$HOME/Programming/Java/Lombok/lombok.jar"
+export PATH=$PATH:~/Downloads/zig-linux-x86_64-0.11.0-dev.2560+602029bb2 
 
-neofetch
-# neofetch --kitty ~/Pictures/2bneo.jpg
+source ~/.zkeybinds.zsh
+# neofetch
