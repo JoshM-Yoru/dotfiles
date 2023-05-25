@@ -1,0 +1,7 @@
+set selection-clipboard clipboard
+
+set default-bg rgba(0,0,0,0.85)
+
+set recolor-lightcolor rgba(0,0,0,0)
+
+

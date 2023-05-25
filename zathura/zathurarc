@@ -1,0 +1,41 @@
+#set selection-clipboard clipboard
+
+#set default-bg rgba(0,0,0,0.85)
+
+#set recolor-lightcolor rgba(0,0,0,0)
+
+#zoom
+set zoom-step 5
+map <C-n> zoom out
+map <C-m> zoom in
+
+#clipboard
+set selection-clipboard clipboard
+
+set incremental-search "true"
+
+set font "JetBrainsMono NF"
+
+set adjust-open "width"
+
+set window-title-basename "true"
+
+set statusbar-basename "true"
+
+set guioptions none
+
+# colors
+
+set default-bg "rgba(0,0,0,.85)"
+set default-fg pink
+set recolor-darkcolor "#c0caf5"
+set recolor-lightcolor "rgba(0,0,0,0)"
+set highlight-color "#c6b675"
+set highlight-active-color "#a0b77c"
+set inputbar-bg "#141412"
+set inputbar-fg "#e5e0c9"
+
+set recolor true
+map i recolor
+map <C-Space> toggle_statusbar
+
