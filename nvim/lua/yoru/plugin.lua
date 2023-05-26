@@ -134,6 +134,7 @@ local plugins = {
         'christoomey/vim-tmux-navigator',
         lazy = false
     },
+    'cdelledonne/vim-cmake'
 }
 
 local opts = {}
