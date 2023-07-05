@@ -87,27 +87,6 @@ local plugins = {
     {
         'hrsh7th/cmp-nvim-lsp-signature-help'
     },
-    -- {
-    --     config = function()
-    --         require 'lspconfig'.setup({
-    --             require 'jdtls'.setup {
-    --                 cmd = {
-    --                     "-xx:+useparallelgc",
-    --                     "-xx:gctimeratio=4",
-    --                     "-xx:adaptivesizepolicyweight=90",
-    --                     "-dsun.zip.disablememorymapping=true",
-    --                     "-djava.import.generatesmetadatafilesatprojectroot=false",
-    --                     "-xmx1g",
-    --                     "-xms100m",
-    --                     "-javaagent:~/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-    --                     "-jar $(echo $jar) /"
-    --                     -- "-jar $(echo "$jar") ",
-    --                 },
-    --                 use_lombok_agent = true
-    --             }
-    --         })
-    --     end
-    -- },
     {
         "windwp/nvim-ts-autotag",
         config = function()
