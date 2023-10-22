@@ -9,7 +9,7 @@
 
     "modules-left": [
         // "custom/launcher",
-        "wlr/workspaces",
+        "hyprland/workspaces",
         "custom/media",
         "hyprland/window",
     ],
@@ -24,13 +24,13 @@
         "memory",
         "cpu",
         // "custom/keyboard-layout",
-        "battery",
         //"custom/PBPbattery",
         // "backlight#icon",
         // "backlight#value",
         "pulseaudio",
     "pulseaudio#microphone",
         "network",
+        "battery",
     ],
 
     // Modules
@@ -49,8 +49,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -71,7 +71,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": " {usage}% ({load})", // Icon: microchip
+        "format": "  {usage}% ({load})", // Icon: microchip
         "states": {
             "warning": 70,
             "critical": 90,
@@ -92,7 +92,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%", // Icon: memory
+        "format": "  {}%", // Icon: memory
         "on-click": "kitty -e 'btm'", 
         "states": {
             "warning": 70,
@@ -125,7 +125,7 @@
         "max-length": 120
     },
 
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "disable-markup" : false,
         "all-outputs": true,
@@ -135,7 +135,9 @@
             "1": "",
             "2": "",
             "3": "󰙯",
-            "4": "",
+            "4": "",
+            "5": "󰡨",
+            "6": "",
         }
     },
 
@@ -144,9 +146,9 @@
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "婢",
+        "format-muted": "󰸈",
         "format-icons": {
-            "headphone": "",
+            "headphone": "󰋋",
             "hands-free": "וֹ",
             "headset": "  ",
             "phone": "",
@@ -162,8 +164,8 @@
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
+        "format-source": " {volume}%",
+        "format-source-muted": " ",
         "on-click": "pamixer --default-source -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer --default-source -i 5",
