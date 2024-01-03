@@ -19,18 +19,18 @@ local plugins = {
     "xiyaowong/transparent.nvim",
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     "nvim-telescope/telescope-fzf-native.nvim",
     "kyazdani42/nvim-tree.lua",
     'folke/tokyonight.nvim',
-    { "catppuccin/nvim", name = "catppuccin" },
+    { "catppuccin/nvim",                 name = "catppuccin" },
     { 'nvim-treesitter/nvim-treesitter', cmd = "TSUpdate" },
     'nvim-treesitter/playground',
     'theprimeagen/harpoon',
     'mbbill/undotree',
     'tpope/vim-fugitive',
+    "rafamadriz/friendly-snippets",
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -49,13 +49,15 @@ local plugins = {
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' },     -- Required
+            {
+                "L3MON4D3/LuaSnip",
+                dependencies = { "rafamadriz/friendly-snippets" },
+            }
         }
     },
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
     "BurntSushi/ripgrep",
-    "rafamadriz/friendly-snippets",
     "saadparwaiz1/cmp_luasnip",
     {
         "karb94/neoscroll.nvim",
@@ -87,6 +89,27 @@ local plugins = {
     {
         'hrsh7th/cmp-nvim-lsp-signature-help'
     },
+    -- {
+    --     config = function()
+    --         require 'lspconfig'.setup({
+    --             require 'jdtls'.setup {
+    --                 cmd = {
+    --                     "-xx:+useparallelgc",
+    --                     "-xx:gctimeratio=4",
+    --                     "-xx:adaptivesizepolicyweight=90",
+    --                     "-dsun.zip.disablememorymapping=true",
+    --                     "-djava.import.generatesmetadatafilesatprojectroot=false",
+    --                     "-xmx1g",
+    --                     "-xms100m",
+    --                     "-javaagent:~/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+    --                     "-jar $(echo $jar) /"
+    --                     -- "-jar $(echo "$jar") ",
+    --                 },
+    --                 use_lombok_agent = true
+    --             }
+    --         })
+    --     end
+    -- },
     {
         "windwp/nvim-ts-autotag",
         config = function()
@@ -99,12 +122,6 @@ local plugins = {
     {
         "numToStr/Comment.nvim",
     },
-    {
-        'goolord/alpha-nvim',
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-        end
-    },
     'nvim-lualine/lualine.nvim',
     'nvim-tree/nvim-web-devicons',
     'windwp/nvim-autopairs',
@@ -113,7 +130,20 @@ local plugins = {
         'christoomey/vim-tmux-navigator',
         lazy = false
     },
-    'cdelledonne/vim-cmake'
+    -- 'cdelledonne/vim-cmake',
+    'mfussenegger/nvim-dap',
+    'rcarriga/nvim-dap-ui',
+    { 'rose-pine/neovim', name = 'rose-pine' },
+    {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                -- config
+            }
+        end,
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    },
 }
 
 local opts = {}
@@ -182,3 +212,5 @@ require('Comment').setup({
     ---Function to call after (un)comment
     post_hook = nil,
 })
+
+require("luasnip.loaders.from_vscode").lazy_load()
