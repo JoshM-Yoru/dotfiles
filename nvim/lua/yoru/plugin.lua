@@ -31,29 +31,44 @@ local plugins = {
     'mbbill/undotree',
     'tpope/vim-fugitive',
     "rafamadriz/friendly-snippets",
+    -- {
+    --     'VonHeikemen/lsp-zero.nvim',
+    --     branch = 'v2.x',
+    --     dependencies = {
+    --         -- LSP Support
+    --         { 'neovim/nvim-lspconfig' }, -- Required
+    --         {
+    --             -- Optional
+    --             'williamboman/mason.nvim',
+    --             build = function()
+    --                 pcall(vim.cmd, 'MasonUpdate')
+    --             end,
+    --         },
+    --         { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+    --
+    --         -- Autocompletion
+    --         { 'hrsh7th/nvim-cmp' },     -- Required
+    --         { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+    --         {
+    --             "L3MON4D3/LuaSnip",
+    --             dependencies = { "rafamadriz/friendly-snippets" },
+    --         }
+    --     }
+    -- },
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' }, -- Required
-            {
-                -- Optional
-                'williamboman/mason.nvim',
-                build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },     -- Required
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            {
-                "L3MON4D3/LuaSnip",
-                dependencies = { "rafamadriz/friendly-snippets" },
-            }
-        }
+        'williamboman/mason.nvim',
+        build = function()
+            pcall(vim.cmd, 'MasonUpdate')
+        end,
+    },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/nvim-cmp' },
+    {
+        'L3MON4D3/LuaSnip',
+        dependencies = { "rafamadriz/friendly-snippets" },
     },
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
