@@ -26,7 +26,7 @@ Arc-Dark Color Scheme
 
 @keyframes blink-critical {
     70% {
-      color: white;
+        color: white;
     }
 
     to {
@@ -44,7 +44,7 @@ Arc-Dark Color Scheme
     border: none;
     border-radius: 0;
     min-height: 0;
-    margin: 1px;
+    margin: 0;
     padding: 0;
     color: #66ACED;
 }
@@ -53,13 +53,12 @@ Arc-Dark Color Scheme
 /* The whole bar */
 window#waybar {
     /* color: #dfdfdf; */
-    /* background-color: rgba(0,0,0,0.8); */
-    /* background-color: rgba(8,0,37,0.85); */
-    background-color: rgba(0,0,0,0);
-    /* font-family: JetBrains Mono Nerd Font; */
-    font-family: Intel One Mono Nerd Font;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* background-color: rgba(8, 0, 37, 0.85); */
+    /* background-color: rgba(0,0,0,0); */
+    font-family: IntelOneMonoNerdFont;
     font-size: 14px;
-    /* border-radius: 22px; */
+    border-radius: 10px;
 }
 
 /* Every modules */
@@ -81,9 +80,9 @@ window#waybar {
 #workspaces,
 #custom-media,
 #custom-PBPbattery {
-    padding:0.25rem 0.75rem;
-    margin: 1px 6px;
-    background-color: rgba(0,0,0,0.8);
+    padding: 0.25rem 0.75rem;
+    margin: 0px 6px;
+    /* background-color: rgba(0,0,0,0.8); */
     border-radius: 20px;
 }
 
@@ -145,21 +144,19 @@ window#waybar {
 
 #memory.warning {
     color: orange;
- }
+}
 
 #memory.critical {
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #mode {
-    /* background: @highlight; */
-    /* background: #dfdfdf; */
     border-bottom: 3px transparent;
-    color:#ff4499;
+    color: #ff4499;
     margin-left: 5px;
     padding: 7px;
 }
@@ -207,8 +204,8 @@ window#waybar {
 }
 
 #workspaces {
-    font-size:16px;
-    background-color: rgba(0,0,0,0.8);
+    font-size: 15px;
+    /* background-color: rgba(0,0,0,0.8); */
     border-radius: 20px;
 }
 
@@ -219,9 +216,9 @@ window#waybar {
 }
 
 #workspaces button.active {
-    border-bottom: 1px solid  #ff4499;
+    border-bottom: 1px solid #ff4499;
     margin-bottom: 1px;
-    padding-left:0;
+    padding-left: 0;
 }
 
 #workspaces button.urgent {
@@ -230,17 +227,17 @@ window#waybar {
 }
 
 #custom-power {
-    font-size:18px;
+    font-size: 18px;
     padding-right: 1rem;
 }
 
 #custom-launcher {
-    font-size:15px;
-    margin-left:15px;
-    margin-right:10px;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 10px;
 }
 
 #backlight.icon {
-    padding-right:1px;
+    padding-right: 1px;
     font-size: 13px;
 }

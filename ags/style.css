@@ -1,0 +1,52 @@
+* {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+window.bar {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: IntelOneMonoNerdFont;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button.active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.workspaces {
+    padding: 0 15px;
+    font-size: 15px;
+}
+
+.workspaces button {
+    color: #66ACED;
+    margin: 4px 0;
+    padding: 0 16px;
+}
+
+.workspaces button.focused {
+    border-bottom: 1px solid #ff4499;
+}
+
+.clock {
+    color: #73daca;
+}
+
+.client-title {
+    font-weight: bold;
+    color: #66ACED;
+}
+
+.media {
+    color: #bb9af7;
+}
+
+.sysusage {
+    color: #f7768e;
+}
